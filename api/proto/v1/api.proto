@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package v1;
+
+import "google/protobuf/timestamp.proto";
+
+
+message GetVersionRequest {
+    string verbose = 1;
+}
+  
+message GetVersionResponse {
+    string version = 1;
+    string major = 2;
+    string minor = 3;
+    string patch = 4;
+    string revision = 5;
+    string go_version = 6;
+    string git_commit = 7;
+    google.protobuf.Timestamp compile_time = 8;
+}
+
+service Meta {
+    rpc GetVersion (GetVersionRequest) returns (GetVersionResponse) {}
+}
