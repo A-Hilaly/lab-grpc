@@ -18,3 +18,12 @@ build-server-image:
 	docker build \
 		-t grpc-server \
 		.
+
+go-tidy:
+	GO111MODULE=on go mod tidy
+
+go-verify:
+	GO111MODULE=on go mod verify
+
+go-vendor:
+	GO111MODULE=on go mod vendor
