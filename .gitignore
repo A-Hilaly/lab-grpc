@@ -12,8 +12,12 @@
 *.out
 /.vscode/launch.json
 
-# proto out
-
+# dev
 ._dev/
 
+# proto out
 pkg/api/v1/*.go
+
+# binaries
+client
+server
