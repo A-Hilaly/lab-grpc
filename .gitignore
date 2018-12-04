@@ -19,5 +19,5 @@
 pkg/api/v1/*.go
 
 # binaries
-client
-server
+client.o
+server.o
