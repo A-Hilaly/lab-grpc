@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/golang:1.11.2
+      - image: circleci/golang:1.11
         environment:
           GO111MODULE: "on"
     working_directory: /go/src/github.com/a-hilaly/lab-grpc
@@ -26,6 +26,8 @@ jobs:
           command: |
             # Add go binaries folder to PATH 
             export PATH=$PATH:/go/bin
+
+            # compile protos
             make compile-protos
 
       - run:
