@@ -1,3 +1,5 @@
+GO111MODULE=on
+
 compile-protos:
 	protoc \
 		--proto_path=api/proto/v1 \
@@ -15,6 +17,7 @@ build-client:
 	go build -o client cmd/client/main.go
 
 build-server-image:
+	GO111MODULE=on GOOS=linux go build -o server cmd/server/main.go
 	docker build \
 		-t grpc-server \
 		.
@@ -27,3 +30,6 @@ go-verify:
 
 go-vendor:
 	GO111MODULE=on go mod vendor
+
+go-download:
+	GO111MODULE=on go mod download
